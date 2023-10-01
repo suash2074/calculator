@@ -156,11 +156,17 @@ justify-content:space-evenly ;
 
 }
 
-.row .blank{
+.row:nth-child(5)>.blank{
     display: hidden;
     background: transparent;
 }
 
-input:is(:checked):target~.numbers>.row>button{
-    color: white;
+.row:nth-child(1)>button{
+    color: rgb(59, 239, 239);
+    font-weight: normal;
+}
+
+.row>button:nth-child(4){
+    color: orange;
+    
 }
