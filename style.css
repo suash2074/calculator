@@ -16,7 +16,7 @@ body {
 .calculator {
     position: relative;
     width: 22%;
-    height: 85vh;
+    height: 90 vh;
     background-color: rgb(255, 255, 255);
     border-radius: 30px;
     /* border: 1px solid black; */
@@ -106,20 +106,61 @@ input:checked~.moon {
 input:checked~.animateBg {
     clip-path: circle(70% at 50% 50%);
 }
+.input-area :nth-child(1){
+    width: 100%;
+    text-align: right;
+    border: 0px;
+    font-weight: bold;
+    background-color: rgba(240, 248, 255, 0);
+    padding: 0 20px 2px 0;
+    font-size: 25px;
+}
 
-.input-area input{
-    /* position: absolute; */
+.input-area :nth-child(2){
     width: 100%;
     height: 15vh;
-    /* z-index: 0; */
-    top: 1;
-    padding: 0 20px 10px 0;
-    font-size: 30px;
+    /* top: 1; */
+    padding: 0 25px 5px 0;
+    margin-bottom: 0px;
+    font-size: 40px;
+    font-weight: bold;
     background-color: rgba(240, 248, 255, 0);
-    border: 0px solid beige;
+    border: 0px;
     text-align: right;
 }
 
 .numbers{
-    padding: 20px;
+    width: 100%;
+    height: 100% ;
+    padding: 0px 20px 20px 20px;
+    background-color: rgba(202, 200, 200, 0.311);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.numbers .row{
+    display: flex;
+justify-content:space-evenly ;
+}
+
+.numbers .row button{
+    width: 60px;
+    height: 55px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(202, 200, 200, 0.105);
+
+}
+
+.row .blank{
+    display: hidden;
+    background: transparent;
+}
+
+input:is(:checked):target~.numbers>.row>button{
+    color: white;
 }

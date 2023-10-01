@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Calcultor</title>
   </head>
   <body>
@@ -24,38 +25,59 @@
           <span class="toggle"></span>
           <span class="animateBg"></span>
         </label>
-        <div class="input-area">
-          <input type="text" disabled placeholder="123"/>
-        </div>
-    </div>
-      
+      </div>
+      <div class="input-area">
+        <input type="text" disabled placeholder="123 X 456 " />
+        <input type="text" disabled placeholder="123" />
+      </div>
 
       <div class="numbers">
-        <div class="first-row">
-          <button class="button1">7</button>
-          <button class="button2">8</button>
-          <button class="button3">9</button>
-          <button class="addition">+</button>
+        <div class="row">
+          <button class="clear">AC</button>
+          <button class="plus-minus"><i class="fa-solid fa-plus-minus" style="color: #000000;"></i></button>
+          <button class="percent">
+            <span class="material-symbols-outlined"> percent </span>
+          </button>
+          <button class="divide"><i class="fa-solid fa-divide" style="color: #000000;"></i></button>
         </div>
 
-        <div class="second-row">
-          <button class="button1">4</button>
-          <button class="button2">5</button>
-          <button class="button3">6</button>
-          <button class="subtraction">-</button>
+        <div class="row">
+          <button class="button7">7</button>
+          <button class="button8">8</button>
+          <button class="button9">9</button>
+          <button class="multiply">
+            <span class="material-symbols-outlined"> close </span>
+          </button>
         </div>
 
-        <div class="third-row">
+        <div class="row">
+          <button class="button4">4</button>
+          <button class="button5">5</button>
+          <button class="button6">6</button>
+          <button class="subtract">
+            <span class="material-symbols-outlined"> remove </span>
+          </button>
+        </div>
+
+        <div class="row">
           <button class="button1">1</button>
           <button class="button2">2</button>
           <button class="button3">3</button>
-          <button class="multiplacation">*</button>
+          <button class="addition">
+            <span class="material-symbols-outlined"> add </span>
+          </button>
         </div>
 
-        <div class="fourth-row">
-          <button class="button0">0</button>
-          <button class="division">/</button>
-        </div>
+        <div class="row">
+            <button class="blank"></button>
+            <button class="button0">0</button>
+            <button class="dot">.</button>
+            <button class="total">
+                <span class="material-symbols-outlined">
+                    equal
+                    </span>
+            </button>
+          </div>
       </div>
     </div>
   </body>
