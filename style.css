@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(233, 234, 234, 0.662);
+    margin-top: 50px;
+}
+
+.calculator {
+    position: relative;
+    width: 22%;
+    height: 85vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    box-shadow: 4px 4px 10px rgb(148, 145, 145);
+    z-index: 1;
+}
+
+
+.header-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border-radius: 50%;
+    /* background-color: rgba(232, 228, 228, 0.733); */
+    cursor: pointer;
+    /* box-shadow:
+        inset 8px 8px 5px rgba(236, 234, 234, 0.614); */
+}
+
+.label>input {
+    position: absolute;
+    opacity: 0;
+
+}
+
+.toggle {
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(232, 231, 231);
+    border-radius: 50%;
+    box-shadow:
+        inset 5px 5px 5px rgba(190, 188, 188, 0.731);
+    z-index: -1;
+    transition: 0.6s ease-in-out;
+}
+
+input:checked~.toggle {
+    background-color: rgba(52, 51, 51, 0.616);
+    box-shadow: inset 5px 5px 5px rgba(25, 25, 25, 0.598);
+}
+
+.sun {
+    transition: 1s ease-in-out;
+    position: absolute;
+    transition-delay: .8s;
+}
+
+input:checked~.sun {
+    transition-delay: 0s;
+    transform: rotate(360deg) scale(0);
+}
+
+.moon {
+    transform: scale(0);
+    transition: 1s ease-in-out;
+
+}
+
+input:checked~.moon {
+    transition-delay: .8s;
+    transform: scale(1) rotate(360deg);
+    color: white;
+}
+
+.label>.animateBg {
+    position: absolute;
+    width: 100%;
+    height: 170vh;
+    background-color: rgba(15, 15, 15, 0.881);
+    z-index: -2;
+    clip-path: circle(0% at 50% 50%);
+    transition: 1.5s ease-in-out;
+}
+
+input:checked~.animateBg {
+    clip-path: circle(70% at 50% 50%);
+}
+
+.input-area input{
+    /* position: absolute; */
+    width: 100%;
+    height: 15vh;
+    /* z-index: 0; */
+    top: 1;
+    padding: 0 20px 10px 0;
+    font-size: 30px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0px solid beige;
+    text-align: right;
+}
+
+.numbers{
+    padding: 20px;
+}
