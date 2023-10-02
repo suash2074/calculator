@@ -18,8 +18,7 @@ body {
     width: 22%;
     height: 90 vh;
     background-color: rgb(255, 255, 255);
-    border-radius: 30px;
-    /* border: 1px solid black; */
+    border-radius: 25px;
     overflow: hidden;
     box-shadow: 4px 4px 10px rgb(148, 145, 145);
     z-index: 1;
@@ -106,7 +105,8 @@ input:checked~.moon {
 input:checked~.animateBg {
     clip-path: circle(70% at 50% 50%);
 }
-.input-area :nth-child(1){
+
+.input_area>input {
     width: 100%;
     text-align: right;
     border: 0px;
@@ -114,12 +114,16 @@ input:checked~.animateBg {
     background-color: rgba(240, 248, 255, 0);
     padding: 0 20px 2px 0;
     font-size: 25px;
+    color: rgb(106, 105, 105);
 }
 
-.input-area :nth-child(2){
+.input_area>input:active {
+    border: 0px;
+}
+
+.input_area :nth-child(2) {
     width: 100%;
     height: 15vh;
-    /* top: 1; */
     padding: 0 25px 5px 0;
     margin-bottom: 0px;
     font-size: 40px;
@@ -127,23 +131,24 @@ input:checked~.animateBg {
     background-color: rgba(240, 248, 255, 0);
     border: 0px;
     text-align: right;
+    color: rgba(151, 151, 151, 0.703);
 }
 
-.numbers{
+.numbers {
     width: 100%;
-    height: 100% ;
+    height: 100%;
     padding: 0px 20px 20px 20px;
     background-color: rgba(202, 200, 200, 0.311);
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
-.numbers .row{
+.numbers .row {
     display: flex;
-justify-content:space-evenly ;
+    justify-content: space-evenly;
 }
 
-.numbers .row button{
+.numbers .row button {
     width: 60px;
     height: 55px;
     margin: 10px;
@@ -153,20 +158,37 @@ justify-content:space-evenly ;
     font-weight: bold;
     cursor: pointer;
     background-color: rgba(202, 200, 200, 0.105);
+    color: rgb(153, 150, 150);
+
 
 }
 
-.row:nth-child(5)>.blank{
+.row:nth-child(5)>.blank {
     display: hidden;
     background: transparent;
 }
 
-.row:nth-child(1)>button{
+.row:nth-child(1)>button {
     color: rgb(59, 239, 239);
     font-weight: normal;
 }
 
-.row>button:nth-child(4){
+.row>button:nth-child(4) {
     color: orange;
-    
+}
+
+.calculator .input_area input::placeholder {
+    transition: 1s ease-in-out;
+    /* Change this color to your desired color when checkbox is checked */
+}
+
+/* Placeholder text color when checkbox is checked */
+.calculator .input_area.checked input::placeholder {
+    color: white;
+    transition: 1s ease-in-out;
+    /* Change this color to your desired color when checkbox is checked */
+}
+.row>button:hover{
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(72, 72, 72, 0.489);
 }
