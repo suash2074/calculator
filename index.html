@@ -30,14 +30,8 @@
         </label>
       </div>
       <div class="input_area">
-        <input id="screen1" type="text" class="screen" placeholder="0"></input>
-        <input
-          id="screen2"
-          class="screen"
-          type="text"
-          disabled
-          placeholder="123"
-        />
+        <input id="screen1" type="text" class="screen" disabled placeholder="0"></input>
+        <input id="screen2" class="screen" type="text" disabled placeholder="0"/>
       </div>
 
       <div class="numbers">
@@ -49,7 +43,7 @@
           <button class="percent">
             <i class="fa-solid fa-percent fa-lg"></i>
           </button>
-          <button class="operation" data-operation="/">
+          <button id="operation" class="btn operations divide" data-operand="/">
             <i class="fa-solid fa-divide fa-lg"></i>
           </button>
         </div>
@@ -58,7 +52,7 @@
           <button id="btn7" class="btn buttons">7</button>
           <button id="btn8" class="btn buttons">8</button>
           <button id="btn9" class="btn buttons">9</button>
-          <button class="operation" data-operation="*">
+          <button id="operation" class="btn operations multiply" data-operand="*">
             <i class="fa-solid fa-xmark fa-lg"></i>
           </button>
         </div>
@@ -67,7 +61,7 @@
           <button class="btn buttons">4</button>
           <button class="btn buttons">5</button>
           <button class="btn buttons">6</button>
-          <button class="operation" data-operation="-">
+          <button id="operation" class="btn operations subtract" data-operand="-">
             <i class="fa-solid fa-minus fa-lg"></i>
           </button>
         </div>
@@ -76,7 +70,7 @@
           <button class="btn buttons">1</button>
           <button class="btn buttons">2</button>
           <button class="btn buttons">3</button>
-          <button class="operation" data-operation="+">
+          <button id="operation" class="btn operations add" data-operand="+">
             <i class="fa-solid fa-plus fa-lg"></i>
           </button>
         </div>
@@ -85,67 +79,13 @@
           <button class="blank"></button>
           <button class="btn buttons" value="0">0</button>
           <button class="btn buttons">.</button>
-          <button class="total">
+          <button class="total" id="total">
             <i class="fa-solid fa-equals fa-lg"></i>
           </button>
         </div>
       </div>
     </div>
 
-    <script>
-      let toggle = document.getElementById("toggle");
-      let inputArea = document.querySelector(".calculator .input_area");
-
-      toggle.addEventListener("change", function () {
-        let buttons = document.querySelectorAll(
-          ".calculator .numbers .row .buttons"
-        );
-        let screen = document.querySelectorAll(
-          ".calculator .input_area .screen"
-        );
-        if (toggle.checked) {
-          inputArea.classList.add("checked");
-          screen.forEach(function (input) {
-            input.style.color = "white";
-            input.style.transition = "1s ease-in-out";
-          });
-          buttons.forEach(function (button) {
-            button.style.color = "white";
-            button.style.transition = "1s ease-in-out";
-          });
-        } else {
-          inputArea.classList.remove("checked");
-
-          screen.forEach(function (input) {
-            input.style.color = "";
-          });
-          buttons.forEach(function (button) {
-            button.style.color = "";
-          });
-        }
-      });
-
-      const all_buttons = document.querySelectorAll(".btn");
-      // console.log(all_buttons[2]);
-
-      let currentNumber = "";
-      all_buttons.forEach((bt) => {
-        bt.addEventListener("click", (event) => {
-          clickedNumber = event.target.innerHTML;
-          currentNumber += clickedNumber; // Concatenate the clicked number
-          const display = document.getElementById("screen1");
-          display.value = currentNumber;
-          // document.getElementById("screen1").textContent = currentNumber;
-        });
-      });
-
-      const clear = document.querySelector(".clear");
-      clear.addEventListener('click', (event) => {
-        const display = document.getElementById("screen1");
-        currentNumber = "";
-        display.value = currentNumber;
-      });
-
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

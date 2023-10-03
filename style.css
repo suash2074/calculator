@@ -106,7 +106,7 @@ input:checked~.animateBg {
     clip-path: circle(70% at 50% 50%);
 }
 
-.input_area>input {
+.input_area>:nth-child(1) {
     width: 100%;
     text-align: right;
     border: 0px;
@@ -115,10 +115,6 @@ input:checked~.animateBg {
     padding: 0 20px 2px 0;
     font-size: 25px;
     color: rgb(106, 105, 105);
-}
-
-.input_area>input:active {
-    border: 0px;
 }
 
 .input_area :nth-child(2) {
